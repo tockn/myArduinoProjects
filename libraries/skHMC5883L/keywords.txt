@@ -1,0 +1,21 @@
+#######################################
+# Syntax Coloring Map For skHMC5883L
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+skHMC5883L	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+Begin	KEYWORD2
+ActionMode	KEYWORD2
+Send	KEYWORD2
+Receive	KEYWORD2
+ContinueRead	KEYWORD2
+SingleRead	KEYWORD2
+GetOrientation	KEYWORD2
+

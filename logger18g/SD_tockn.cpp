@@ -9,7 +9,8 @@ bool SD_tockn::begin() {
 		  return false;
     }
 	}
-  file = SD.open(directory);
+  sprintf(logNumDir, "%s/lognum.txt", directory);
+  file = SD.open(logNumDir);
   if(!file){
     return false;
   }
@@ -20,8 +21,10 @@ bool SD_tockn::begin() {
 		if(i >= 100) break;
 	}
 	logNum = atoi(numStr);
+  Serial.println();
+  Serial.println(numStr);
 	logNum++;
-	sprintf(logNumDir, "%s/lognum.txt", directory);
+ 
 	sprintf(numStr, "%d", logNum);
 	writeFile(logNumDir, numStr);
 	sprintf(directory, "%s/%d", directory, logNum);
@@ -56,9 +59,10 @@ bool SD_tockn::appendFile(const char * path, const char * message){
       return false;
     }
     if(file.print(message)){
+      stack++;
+      if (stack > 100)  stack = 100;
       return true;
     } else {
       return false;
     }
-    Serial.print(message);
 }

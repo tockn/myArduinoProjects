@@ -16,6 +16,7 @@ class SD_tockn {
 		char RPYData[2048];
 
 	public:
+    int stack = 0;
     char GPSDir[100] = "/GPS.txt";
     char RPYDir[100] = "/RPY.txt";
 		char directory[100] ="/flight";
